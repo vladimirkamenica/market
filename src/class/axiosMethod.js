@@ -36,4 +36,43 @@ export default class AxiosMethod{
     })   
     
 }
+static postNotAuth(url,data){
+         
+    return new Promise((res,rej)=>{
+        axios.post(this.default_url(url),data)
+        .then(result => {
+           res(result);
+       }).catch(error=>{
+           rej(error);
+       });  
+
+    })   
+    
+}
+static put(url,data){
+         
+    return new Promise((res,rej)=>{
+        axios.put(this.default_url(url),data,this.config())
+        .then(result => {
+           res(result);
+       }).catch(error=>{
+           rej(error);
+       });  
+
+    })   
+    
+}
+static delete(url){
+         
+    return new Promise((res,rej)=>{
+        axios.post(this.default_url(url),this.config())
+        .then(result => {
+           res(result);
+       }).catch(error=>{
+           rej(error);
+       });  
+
+    })   
+    
+}
 }

@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import VueScratchable from '../vue-scratchable.vue';
+import VueScratchable from './vue-scratchable.vue';
 import paperPattern from '@/assets/natural-paper-texture.jpg';
 export default {
 name: 'ScratchCard',

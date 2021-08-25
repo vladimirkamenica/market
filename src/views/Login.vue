@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import AxiosMethod from '@/class/axiosMethod.js';
+
 export default {
 name: 'Login',
 data(){
@@ -43,60 +43,28 @@ data(){
     }
 },
 methods: {
-    async loginAxios(){
-         let post = await AxiosMethod.post("login",this.user);
-         console.log(post.data);
-            if(post.data.success){
-                    localStorage.setItem( 'token', post.data.token );
+     loginAxios(){
+        
+         this.$axios.post("login",this.user)
+                    .then( res=>{
+                         if(res.data.success){
+                    localStorage.setItem( 'token', res.data.token );
                     this.$store.commit("setAuth", true);
-                    this.$store.commit("setAuthUser", post.data.user);
+                    this.$store.commit("setAuthUser", res.data.user);
                     this.$router.push({ name: 'Home' })
                     console.log(this.$store);
                     console.log(localStorage.getItem('token'));
-                    console.log(post.data.auth);
+                    console.log(res.data.auth);
 
                    }else{
                        localStorage.removeItem('token');
                        console.log('error');
                    }
-        //  AxiosMethod.post("login",this.user)
-        //             .then( res=>{
-        //                  if(res.data.success){
-        //             localStorage.setItem( 'token', res.data.token );
-        //             this.$store.commit("setAuth", true);
-        //             this.$store.commit("setAuthUser", res.data.user);
-        //             this.$router.push({ name: 'Home' })
-        //             console.log(this.$store);
-        //             console.log(localStorage.getItem('token'));
-        //             console.log(res.data.auth);
+                    } )
+                    .catch(err =>{
+                        console.log(err);
+                    });
 
-        //            }else{
-        //                localStorage.removeItem('token');
-        //                console.log('error');
-        //            }
-        //             } )
-        //             .catch(err =>{
-        //                 console.log(err);
-        //             });
-        //   this.$http.post("http://localhost:8000/api/login",this.user).then((res)=>{
-        //            if(res.data.success){
-        //             localStorage.setItem( 'token', res.data.token );
-        //             this.$store.commit("setAuth", true);
-        //             this.$store.commit("setAuthUser", res.data.user);
-        //             this.$router.push({ name: 'Home' })
-        //             console.log(this.$store);
-        //             console.log(localStorage.getItem('token'));
-        //             console.log(res.data.auth);
-
-        //            }else{
-        //                localStorage.removeItem('token');
-        //                console.log('error');
-        //            }
-                  
-        //   }).catch(error =>{
-        //                   console.log(error.response.data.errors);
-                         
-        //               });
       }
 }
 }

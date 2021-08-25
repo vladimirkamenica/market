@@ -110,8 +110,6 @@
 </template>
 
 <script>
-import AxiosMethod from '@/class/axiosMethod.js';
-
 export default {
 name: "CategorySubcategory",
 data(){
@@ -137,39 +135,38 @@ created(){
 },
 methods:{
     getCategories(){
-  this.$http.get(AxiosMethod.default_url('category'),AxiosMethod.config())
-                  .then(res =>{
+        this.$axios.get('category')
+                   .then(res =>{
                       this.categories = res.data.categories;
-                    })
+                   })
     },
      getSubcategories(){
-     this.$http.get(AxiosMethod.default_url('subcategory'),AxiosMethod.config())
-                  .then(res =>{
+     this.$axios.get('subcategory')
+                   .then(res =>{
                       this.subcategories = res.data.subcategories;
-                    })
+                   })
     },
     newCategory(){
         if(this.category.name.trim() != ''){
-        this.$http.post(AxiosMethod.default_url('category'),this.category,AxiosMethod.config())
-                  .then(res =>{
-                      this.categories = res.data.categories;
+             this.$axios.post('category',this.category)
+                   .then(res =>{
+                     this.categories = res.data.categories;
                       this.category.name = '';
-              })
+                   })
         }
         
     },
      newSubcategory(){
          if(this.subcategory.name.trim() != ''){
-         this.$http.post(AxiosMethod.default_url('subcategory'),this.subcategory,AxiosMethod.config())
+         this.$axios.post('subcategory',this.subcategory)
                   .then(res =>{
                       this.subcategories = res.data.subcategories;
-                      this.subcategory.name = '';
-                    
+                      this.subcategory.name = '';                 
                     })
          }
     },
     editCategory(category){
-       this.$http.put(AxiosMethod.default_url(`category/${category.id}`),category,AxiosMethod.config())
+       this.$axios.put(`category/${category.id}`,category)
                  .then(res =>{
                      this.categories = res.data.categories;
                  }).catch(error =>{
@@ -177,7 +174,7 @@ methods:{
                  })
     },
      editSubcategory(subcategory){
-        this.$http.put(AxiosMethod.default_url(`subcategory/${subcategory.id}`),subcategory,AxiosMethod.config())
+        this.$axios.put(`subcategory/${subcategory.id}`,subcategory)
                  .then(res =>{               
                      this.subcategories = res.data.subcategories;
                  }).catch(error =>{
@@ -185,7 +182,7 @@ methods:{
                  })
     },
     delCategory(category){
-         this.$http.delete(AxiosMethod.default_url(`category/${category.id}`),AxiosMethod.config())
+         this.$axios.delete(`category/${category.id}`)
                  .then(res =>{               
                          this.categories = res.data.categories;
                  }).catch(error =>{
@@ -193,7 +190,7 @@ methods:{
                  })
     },
     delSubcategory(subcategory){
-         this.$http.delete(AxiosMethod.default_url(`subcategory/${subcategory.id}`),AxiosMethod.config())
+         this.$axios.delete(`subcategory/${subcategory.id}`)
                  .then(res =>{               
                          this.subcategories = res.data.subcategories;
                  }).catch(error =>{

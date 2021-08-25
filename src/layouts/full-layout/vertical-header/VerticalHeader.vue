@@ -91,7 +91,7 @@
 import { mapState,mapGetters } from "vuex";
 import LogoDark from "../logo-dark/LogoDark";
 import LogoLight from "../logo-light/LogoLight";
-import AxiosMethod from '@/class/axiosMethod.js';
+
 
 export default {
   name: "vertical-header",
@@ -118,7 +118,7 @@ export default {
       this.$store.commit("SET_SIDEBAR_DRAWER", true);
     },
     logOut(){  
-   this.$http.get(AxiosMethod.default_url('logout'),AxiosMethod.config())
+   this.$axios.get('logout')
              .then(res => {
                console.log(res);
               localStorage.removeItem('token');

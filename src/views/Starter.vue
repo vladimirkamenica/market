@@ -57,7 +57,7 @@
     <!-- ----------------------------------------------- -->
     <b-card class="mb-4" no-body>
       <b-card-body>
-        <h4 class="card-title">Top Selling Products</h4>
+        <b-link :to="{name: 'Category'}"><h4 class="card-title text-dark">Cene na pijacama</h4></b-link>        
         <h6 class="card-subtitle font-weight-normal text-muted">
           Overview of Latest Month
         </h6>

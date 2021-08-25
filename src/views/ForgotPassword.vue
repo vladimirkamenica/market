@@ -54,8 +54,7 @@ data(){
 methods:{
 postAxiosResetLink(){
    if(this.user_login.email.trim() != ""){
-     this.$http.post('http://localhost:8000/api/forgot-password',this.user_login, {
-      })
+     this.$axios.postNotAuth('forgot-password',this.user_login)
                 .then((res)=>{
                      console.log(res);
                      if(res.data.success) this.message  = true;

@@ -56,7 +56,7 @@ methods:{
        console.log(1);
       // console.log(CheckForm.checkPassword(this.errors,this.user))
        if(CheckForm.checkPassword(this.errors,this.user)){
-          this.$http.post("http://localhost:8000/api/new-password",this.user)
+          this.$axios.postNotAuth("new-password",this.user)
                       .then(res => {
                           console.log(res.data)
                           if(res.data.success){

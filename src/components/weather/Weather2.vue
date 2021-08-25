@@ -324,4 +324,8 @@ timeConverter(weatherDate,x){
 
 <style lang="scss">
 @import '@/assets/weather.scss';
+@import '@/assets/weather22.scss';
+
+
+
 </style>

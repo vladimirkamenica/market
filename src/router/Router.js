@@ -117,6 +117,16 @@ const router = new Router({
           path: "/category-subcategory",
           component: () => import("@/views/CategorySubcategory"),
         },
+        {
+          name: "Category",
+          path: "/category",
+          component: () => import("@/views/Category"),
+        },
+        {
+          name: "Subcategory",
+          path: "/subcategory/:id",
+          component: () => import("@/views/Subcategory"),
+        },
       ],
     },
     {
