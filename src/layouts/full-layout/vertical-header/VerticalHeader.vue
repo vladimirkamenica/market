@@ -78,7 +78,8 @@
     
      
       </b-collapse>
-       
+               <b-link right :to="{name: 'Stips'}" class="text-white mr-5">Stips</b-link>
+
           <b-link right v-if="!getAuth" :to="{name: 'Login'}" class="text-white mr-5">Login</b-link>
 
         

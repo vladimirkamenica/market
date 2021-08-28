@@ -38,7 +38,7 @@
      </div>
     
                 
-  <b-button class="btn bg-info mt-2 text-center " @click="reset">Refreash</b-button>
+  <b-button class="btn bg-info mt-2 text-center " @click="reset">Refresh</b-button>
         </b-col>
     </b-row>
     
@@ -96,6 +96,7 @@ name: 'ScratchCard',
         this.display = true;
         this.display_code = false;   
         this.percentage = 0;
+        this.code = '';
         setTimeout(()=>{
             this.makeid(10)
         },1000)

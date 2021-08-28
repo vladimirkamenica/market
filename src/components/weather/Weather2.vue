@@ -151,7 +151,7 @@ data(){
                 dt: ''
            },
            {
-               place: 'Užice',
+               place: 'Lajkovac',
                temp : 0,
                temp_max : 0,
                humidity : 0,

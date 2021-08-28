@@ -23,6 +23,17 @@
           <b-row class="justify-content-center mt-2">
               <b-col cols="6" class="text-center">
                 <b-button class="btn" @click="loginAxios">Login</b-button>
+            
+
+              
+
+              </b-col>
+          </b-row>
+           <b-row class="justify-content-start mt-2">
+              <b-col cols="12" class="text-center" id="my-table" v-html="page">
+               
+              
+
               </b-col>
           </b-row>
       </b-container>
@@ -39,10 +50,12 @@ data(){
         user : {
             email : "",
             password : "",
-        }
+        },
+        page : ''
     }
 },
 methods: {
+   
      loginAxios(){
         
          this.$axios.post("login",this.user)
@@ -70,6 +83,6 @@ methods: {
 }
 </script>
 
-<style>
+<style >
 
 </style>

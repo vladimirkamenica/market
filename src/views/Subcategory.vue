@@ -11,10 +11,10 @@
                       <h5 class="mb-0 text-white">Potkategorije</h5>
                   </template>   
                   <b-card-body>
-                  <b-link class="text-secondary"><div id="my-subcategory" v-for="subcategory in subcategories" :key="subcategory.id">
-                       <h5>{{subcategory.name}}</h5>
+                  <div id="my-subcategory" v-for="subcategory in subcategories" :key="subcategory.id">
+                      <b-link class="text-secondary"> <h5>{{subcategory.name}}</h5></b-link>
                     <hr>
-                    </div></b-link>                   
+                    </div>                   
                   </b-card-body>
                       
                   </b-card>

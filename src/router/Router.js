@@ -127,6 +127,31 @@ const router = new Router({
           path: "/subcategory/:id",
           component: () => import("@/views/Subcategory"),
         },
+        {
+          name: "Stips",
+          path: "/stips",
+          component: () => import("@/views/Stips"),
+        },
+        {
+          name: "SingleCategory",
+          path: "/single-category/:category",
+          component: () => import("@/views/SingleCategory"),
+        },
+        {
+          name: "Weeks",
+          path: "/weeks/:product",
+          component: () => import("@/views/Weeks"),
+        },
+        {
+          name: "Table",
+          path: "/table/:product/:year/:week",
+          component: () => import("@/views/Table"),
+        },
+        {
+          name: "CurrentTable",
+          path: "/current-table/:product/:category",
+          component: () => import("@/views/CurrentTable"),
+        },
       ],
     },
     {
