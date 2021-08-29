@@ -20,9 +20,10 @@
                       <b-avatar
                         class="mr-2 text-white "
                         :variant="item.color"
-                        :text="product.avatar"
+                       
                         size="40px"
-                      ></b-avatar>
+                      >  <component :is='product.img'></component>
+</b-avatar>
                       <b-link class="text-secondary" :to="{name : 'CurrentTable',params: {product : product.value,category:item.stips_category}}" > <h5>{{product.description}}</h5></b-link>  
                     <hr>
                     </div>
@@ -36,7 +37,7 @@
       </b-row>
       <b-row>
           <b-col>
-<pear></pear>
+             <celery></celery>
 
           </b-col>
       </b-row>
@@ -45,11 +46,34 @@
 
 <script>
 import Pear from './type/Pear.vue';
+import Banana from './type/Banana.vue';
+import Apple from './type/Apple.vue';
+import Pineapple from './type/Pineapple.vue';
+import Eggs from './type/Eggs.vue';
+import GreenBeans from './type/GreenBeans.vue';
+import Beet from './type/Beet.vue';
+import Cabbage from './type/Cabbage.vue';
+import Celery from './type/Celery.vue';
+
+
+
+
+
+
+
 
 export default {
 name: 'Block',
 components:{
-    Pear
+    Pear,
+    Banana,
+    Apple,
+    Pineapple,
+    Eggs,
+    GreenBeans,
+    Beet,
+    Cabbage,
+    Celery
 },
 data(){
     return{
@@ -63,22 +87,30 @@ data(){
                     {
                         description : 'Cena jaja(L) na pijacama',
                         value: "Jaja(L)",
-                        avatar: 'L'
+                        avatar: 'L',
+                        img: 'eggs',
+                        size : "2x"
                     },
                     {
                         description : 'Cena jaja(M) na pijacama',
                         value: "Jaja(M)",
-                        avatar: 'M'
+                        avatar: 'M',
+                        img: 'eggs',
+                        size : "2x"
                     },
                     {
                         description : 'Cena jaja(S) na pijacama',
                         value: "Jaja(S)",
-                        avatar: 'S'
+                        avatar: 'S',
+                        img: 'eggs',
+                        size : "1x"
                     },
                     {
                         description : 'Cena jaja(XL) na pijacama',
                         value: "Jaja(XL)",
-                        avatar: 'XL'
+                        avatar: 'XL',
+                        img: 'eggs',
+                        size : "2x"
                     }
 
                 ]
@@ -92,22 +124,28 @@ data(){
                     {
                         description : 'Cena kruške na pijacama',
                         value: "Kruška",
-                        avatar: 'kr'
+                        avatar: 'kr',
+                        img : 'pear'
                     },
                     {
                         description : 'Cena banane na pijacama',
                         value: "Banana",
-                        avatar: 'ba'
+                        avatar: 'ba',
+                        img : 'banana'
+
                     },
                     {
                         description : 'Cena jabuke na pijacama',
                         value: "Jabuka",
-                        avatar: 'ja'
+                        avatar: 'ja',
+                        img : 'apple'
                     },
                     {
                         description : 'Cena ananasa na pijacama',
                         value: "Ananas",
-                        avatar: 'an'
+                        avatar: 'an',
+                        img : 'pineapple'
+
                     }
 
                 ]
@@ -121,22 +159,30 @@ data(){
                     {
                         description : 'Cena boranije na pijacama',
                         value: "Boranija",
-                        avatar: 'bo'
+                        avatar: 'bo',
+                        img : 'green-beans'
+
                     },
                     {
                         description : 'Cena cvekle na pijacama',
                         value: "Cvekla",
-                        avatar: 'cv'
+                        avatar: 'cv',
+                        img : 'beet'
+
                     },
                     {
                         description : 'Cena kupusa na pijacama',
                         value: "Kupus",
-                        avatar: 'ku'
+                        avatar: 'ku',
+                        img : 'cabbage'
+
                     },
                     {
                         description : 'Cena celera na pijacama',
                         value: "Celer",
-                        avatar: 'ce'
+                        avatar: 'ce',
+                        img : 'celery'
+
                     }
 
                 ]

@@ -48,7 +48,7 @@
                       <b-row class="mt-2">
                           <b-col>
                               <hr>
-                               <h5 class="mb-0 text-secondary">Trenutna nedelja</h5>
+                               <h5 class="mb-0 text-secondary">Trenutna cena</h5>
 
                                <b-link class="text-secondary" > 
                           <h5>Cena {{product}} na pijacama za mesec {{findMonth(week[0][1])}}, nedelja - {{week[0][1]}}</h5>
@@ -117,7 +117,8 @@ export default {
           let bracket = line[0].split('(');
           let date = bracket[1];
           let dot = date.split('.');
-          let create = dot[1]+"."+dot[0]+"."+dot[2]+".";     
+          let create = dot[1]+"."+dot[0]+"."+dot[2]+".";  
+          moment.locale();      
           let newDate = moment(create).format('MMMM')
           console.log(moment().week()-1);
           return newDate;

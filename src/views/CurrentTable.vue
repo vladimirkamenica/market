@@ -23,7 +23,7 @@ export default {
 name: 'CurrentTable',
 data(){
     return{
-        fields: ['Proizvod', 'Beograd(Kalenić)','Beograd(Skadarlija)','Čačak','Niš','Sombor'],
+        fields: ['Proizvod', 'Beograd(Kalenić)','Beograd(Skadarlija)','Čačak','Niš','Sombor','Pančevo'],
         tableObj : [],
         year : new Date().getFullYear(),
         weeks : [],
