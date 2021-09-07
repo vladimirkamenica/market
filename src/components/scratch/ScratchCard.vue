@@ -1,9 +1,8 @@
 <template>
-  <div id="scratch-card">
+  <div id="scratch-card" v-if="display2">
       <b-row  v-if="display">
           <b-col>
       <vue-scratchable
-   
       v-slot="{ init }"
       :brushOptions="brush"
       :hideOptions="hide"
@@ -11,10 +10,9 @@
       @percentage-update="updatePoints"
     >
       <div class="img-container">
-    
-        <img
+        <img    
+         
           class="img-fluid"
-          height="400"
           :src="require('@/assets/images/big/img2.jpg')"
           @load="init()"
         >
@@ -32,7 +30,7 @@
      <div class="img-container">
          <img
          class="img-fluid"
-         height="400"
+      
           :src="require('@/assets/images/big/img2.jpg')">
           <p v-if="display_code" class="centered">{{code}}</p>
      </div>
@@ -64,11 +62,14 @@ name: 'ScratchCard',
   },
   created(){
   this.makeid(10);
+  this.display2 = true;
   },
+
   data() {
     return {
       percentage: 0,
       display : true,
+      display2 : false,
       display_code : false,
       code : '',
       hide: {

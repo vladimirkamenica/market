@@ -134,23 +134,33 @@ const router = new Router({
         },
         {
           name: "SingleCategory",
-          path: "/single-category/:category",
+          path: "/cena-na-pijacama/:category/:subcategory/:title",
           component: () => import("@/views/SingleCategory"),
         },
         {
           name: "Weeks",
-          path: "/weeks/:product",
+          path: "/nedelje/:product/:category/:description/:source",
           component: () => import("@/views/Weeks"),
         },
         {
           name: "Table",
-          path: "/table/:product/:year/:week",
+          path: "/table/:product/:year/:week/:category/:source/:fromweek",
           component: () => import("@/views/Table"),
         },
         {
           name: "CurrentTable",
           path: "/current-table/:product/:category",
           component: () => import("@/views/CurrentTable"),
+        },
+        {
+          name: "SingleAnimalNames",
+          path: "/imena-životinja/:id",
+          component: () => import("@/views/SingleAnimalNames"),
+        },
+        {
+          name: "AllAnimalNames",
+          path: "/animal-names/",
+          component: () => import("@/views/AllAnimalNames"),
         },
       ],
     },

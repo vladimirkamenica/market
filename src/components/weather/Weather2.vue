@@ -1,11 +1,21 @@
 <template>
   <div id="weather2">
-      <b-row >
+        <b-card class="mb-4 " >
+            <h4 class="card-title">Vremenska prognoza</h4>
+           
+      <b-row>
+          <b-col xl="6" lg="6" md="12" sm="12"  cols="12">
+               <b-row >
           <b-col >
                 <h6>{{places[0].place}}</h6>
           </b-col>
           <b-col class="text-right">
-              <h6>{{timeConverter(places[0].dt,'hour')}}</h6>            
+              <h6>{{timeConverter(places[0].dt,'hour')}}</h6>       
+          </b-col>
+      </b-row>
+      <b-row>
+          <b-col>
+                 <hr>  
           </b-col>
       </b-row>
       <b-row>
@@ -38,6 +48,7 @@
                           <b-row>
                               <b-col>
                                   <h6>{{places[1].place}}</h6>
+                                    <hr>   
                               </b-col>
                           </b-row>
                           <b-row>
@@ -69,6 +80,7 @@
                           <b-row>
                               <b-col>
                                   <h6>{{places[2].place}}</h6>
+                                    <hr>   
                               </b-col>
                           </b-row>
                           <b-row>
@@ -97,6 +109,118 @@
                           </b-row>
                     </b-col>
                 </b-row>
+
+          </b-col>
+          <b-col xl="6" lg="6" md="12" sm="12"  cols="12">
+      <b-row >
+          <b-col >
+                <h6>{{places[3].place}}</h6>
+          </b-col>
+          <b-col class="text-right">
+              <h6>{{timeConverter(places[3].dt,'hour')}}</h6>            
+          </b-col>
+      </b-row>
+      <b-row>
+          <b-col>
+                 <hr>  
+          </b-col>
+      </b-row>
+      <b-row>
+          <b-col class="text-center">
+                <h1 class="mb-0 font-weight-bold" id="heading"> {{mathCeliOrFloor(places[3].temp)}}° C </h1> <span class="small grey">{{places[3].main}}</span>
+         </b-col>
+      </b-row>
+      <b-row>
+          <b-col >
+           <b-row>
+               <b-col>
+                        <p class="my-1"> <font-awesome-icon style="color:#2962FF"  :icon="['fas', 'wind']" /> <span> {{places[3].wind}} km/h </span> </p>
+                    
+               </b-col>
+          </b-row>  
+           <b-row>
+               <b-col>
+                        <p class="my-1"> <font-awesome-icon style="color:#35B1E8" :icon="['fas', 'tint']" /><span> {{places[3].humidity}}% </span> </p>
+                   
+               </b-col>
+          </b-row>   
+         
+            </b-col>
+           <b-col class="text-right">
+                <component :is="findWeatherIcon(places[4].main)"></component>                                 
+           </b-col>
+         </b-row >
+                <b-row class="mt-4">
+                    <b-col>
+                          <b-row>
+                              <b-col>
+                                  <h6>{{places[4].place}}</h6>
+                                    <hr>   
+                              </b-col>
+                          </b-row>
+                          <b-row>
+                              <b-col class="text-center">
+                                 <h1 class="mb-0 font-weight-bold" id="heading2"> {{mathCeliOrFloor(places[4].temp)}}° C </h1> <span class="small grey">{{places[4].main}}</span>
+                           </b-col>
+                          </b-row>
+                            <b-row>
+                              <b-col class="text-center">
+                                   <component :is="findWeatherIcon(places[4].main)"></component>
+                           </b-col>
+                          </b-row>
+                          <b-row>
+                              <b-col >
+                               <b-row>
+                                 <b-col>
+                                   <p class="my-1"> <font-awesome-icon style="color:#2962FF"  :icon="['fas', 'wind']" /> <span> {{places[4].wind}} km/h </span> </p>                  
+                                </b-col>
+                             </b-row>  
+                              <b-row>
+                                <b-col>
+                                   <p class="my-1"> <font-awesome-icon style="color:#35B1E8" :icon="['fas', 'tint']" /><span> {{places[4].humidity}}% </span> </p>
+                                </b-col>
+                            </b-row>   
+                           </b-col>
+                          </b-row>
+                    </b-col>
+                      <b-col>
+                          <b-row>
+                              <b-col>
+                                  <h6>{{places[5].place}}</h6>
+                                       <hr> 
+                              </b-col>
+                          </b-row>
+                          
+                          <b-row>
+                              <b-col class="text-center">
+                                 <h1 class="mb-0 font-weight-bold" id="heading2"> {{mathCeliOrFloor(places[5].temp)}}° C </h1> <span class="small grey">{{places[5].main}}</span>
+                           </b-col>
+                          </b-row>
+                            <b-row>
+                              <b-col class="text-center">
+                                 <component :is="findWeatherIcon(places[5].main)"></component>
+                           </b-col>
+                          </b-row>
+                           <b-row>
+                              <b-col >
+                               <b-row>
+                                 <b-col>
+                                   <p class="my-1"> <font-awesome-icon style="color:#2962FF" :icon="['fas', 'wind']" /> <span> {{places[5].wind}} km/h </span> </p>                  
+                                </b-col>
+                             </b-row>  
+                              <b-row>
+                                <b-col>
+                                   <p class="my-1"> <font-awesome-icon style="color:#35B1E8" :icon="['fas', 'tint']" /><span> {{places[5].humidity}}% </span> </p>
+                                </b-col>
+                            </b-row>   
+                           </b-col>
+                          </b-row>
+                    </b-col>
+                </b-row>
+          </b-col>
+      </b-row>
+          </b-card>
+     
             </div>
 </template>
 
@@ -152,6 +276,32 @@ data(){
            },
            {
                place: 'Lajkovac',
+               temp : 0,
+               temp_max : 0,
+               humidity : 0,
+               wind : 0,
+               main: '',
+                dt: ''
+           },
+            {
+               place: 'Novi Sad',
+               temp : 0,
+               temp_max : 0,
+               humidity : 0,
+               wind : 0,
+               main: '',
+                dt: ''
+           },
+            {
+               place: 'Sombor',
+               temp : 0,
+               temp_max : 0,
+               humidity : 0,
+               wind : 0,
+               main: '',
+                dt: ''
+           }, {
+               place: 'Valjevo',
                temp : 0,
                temp_max : 0,
                humidity : 0,
@@ -265,7 +415,7 @@ methods:{
        this.places.forEach(pl =>{
               this.$http.get(`http://api.openweathermap.org/data/2.5/weather?q=${pl.place}&units=metric&appid=475a37314ae31b10198e26d314594071`)
                 .then(res =>{
-                   console.log(res);
+              
                    pl.temp = res.data.main.temp;
                    pl.temp_max = res.data.main.temp_max;
                    pl.humidity = res.data.main.humidity;
@@ -281,7 +431,7 @@ methods:{
   getAxiosHourlyDaily(){
     this.$http.get('https://api.openweathermap.org/data/2.5/onecall?lat='+this.lat+'&lon='+this.lon+'&units=metric&appid=475a37314ae31b10198e26d314594071')
     .then(res =>{
-        console.log(res.data);
+       
         this.hourlyDaily = res.data.daily;
     })
     .catch(err =>{

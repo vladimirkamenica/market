@@ -4,7 +4,8 @@
         <b class="logo-icon">
             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
             <!-- Dark Logo icon -->
-            <img src="../../../assets/images/esencalogo.png" alt="homepage" height="50" >
+            <b-link :to="{name: 'Home'}"><img src="../../../assets/images/pijaceLogoWhite.png" alt="homepage" height="50" ></b-link>
+           
             
         </b>
         <!--End Logo icon -->

@@ -44,9 +44,7 @@ export default class tableToobject{
 
                        for (let i = my_liste[0].length-1; i >= 0; --i) {
                           my_liste[1].unshift(my_liste[0][i]);                         
-                       }
-                           my_liste[1].push('week');
-                           my_liste[1].push('year');                      
+                       }                     
                     return my_liste
     }
 

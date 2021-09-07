@@ -19,22 +19,16 @@
         <template v-for="(route, i) in routes">
           <!---Single Menu -->
           <li class="nav-item" :key="i" v-if="!route.childern && !route.header">
-            <router-link :to="`${route.to}`" class="nav-link d-flex">
-              <i :class="route.icon"></i>
+            <router-link :to=" {name: `${route.name}`} " class="nav-link d-flex">
+              <!-- <i :class="route.icon"></i> -->
+               <font-awesome-icon  :icon="['fa', route.icon]" class="mr-1"/>
+
               <span class="hide-text">{{ route.title }}</span>
             </router-link>
           </li>
         </template>
       </ul>
-      <div class="text-center px-3">
-        <b-button
-          target="_blank"
-          variant="info"
-          block
-          href="https://www.wrappixel.com/templates/xtreme-vuesax-admin-pro/"
-          >Upgrade to Pro</b-button
-        >
-      </div>
+    
     </div>
   </aside>
 </template>

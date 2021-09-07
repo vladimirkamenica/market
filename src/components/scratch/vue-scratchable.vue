@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-scratchable-wrapper">
+  <div class="vue-scratchable-wrapper" v-if="display">
     <slot :init="init"></slot>
     <canvas
       @mousedown="mouseDown"
@@ -42,6 +42,7 @@ export default {
   data() {
     return {
       canvas: null,
+      display : true,
       context: null,
       isPressed: false,
       offset: {
@@ -82,6 +83,7 @@ export default {
     this.init();
 
     window.addEventListener('resize', debounce(this.init, 500));
+    
   },
   destroyed() {
     window.removeEventListener('mouseup', this.mouseUp);

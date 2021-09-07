@@ -7,9 +7,10 @@ export default new Vuex.Store({
     Sidebar_drawer: false,
     LayoutType: "full-sidebar",
     SidebarColor: "white",
-    navbarColor: "primary",
+    navbarColor: "#5bab42",
     logoColor: "white",
     auth : false,
+    display : false,
     authUser : {},
   },
   mutations: {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     setAuthUser(state,user){
       state.authUser = user;
     },
+    setDisplay(state,display){
+      state.display = display;
+    },
   },
   actions: {
     setLayoutType({ commit }, width) {
@@ -34,6 +38,9 @@ export default new Vuex.Store({
   getters: {
     getAuth(state){
       return state.auth;
+    },
+    getDisplay(state){
+      return state.display;
     },
     getAuthUser(state){
       return state.authUser;

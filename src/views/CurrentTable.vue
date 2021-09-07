@@ -1,6 +1,6 @@
 <template>
   <div id="current-table">
-      <b-container class="mt-4">
+      <b-container   class="mt-4">
           <b-row class="justify-content-center">
               <b-col class="text-center">
                   <h2>Cene za trenutno godinu i nedelju</h2>
@@ -8,7 +8,7 @@
           </b-row>
           <b-row class="mt-4">
               <b-col>
-                 <b-table striped  :items="tableObj" :fields="fields" class="bg-white" thead-class="greenColor"></b-table>
+                 <b-table striped stacked='xl' :items="tableObj" :fields="fields" class="bg-white" thead-class="greenColor"></b-table>
               </b-col>
           </b-row>
       </b-container>
@@ -16,8 +16,9 @@
 </template>
 
 <script>
-import convertTableToObject from '../class/htmlTableToObj.js';
-import moment from 'moment';
+
+import findCurrentWeek from '../class/findCurrentWeek.js';
+
 
 export default {
 name: 'CurrentTable',
@@ -29,7 +30,6 @@ data(){
         weeks : [],
         week : '',
         product : '',
-        currentWeek : moment().week()-1,
         category : ''
     }
 
@@ -37,36 +37,26 @@ data(){
 created(){
 this.product = this.$route.params.product;
 this.category = this.$route.params.category;
-
 this.getWeek();
 
 
 },
 methods:{
      getWeek(){
-        this.$http.get(`https://www.stips.minpolj.gov.rs/stips/ajax/nedelje_za_godinu/${this.year}`)
-                   .then(res =>{
-                       this.weeks = res.data.result.nedelje;
-                      
-                       this.week = this.weeks.filter(x=>{
-                           if(x[1].split('(')[0].replace(/[. ]/g, '') == this.currentWeek) return true;
-                       })
-                  
-                       this.getTable(this.week,this.category);
-                     
+        this.$axios.getWeeksStips(this.year)
+                   .then(res =>{                             
+                       this.week = findCurrentWeek(res);             
+                       this.getTable(this.week,this.year,this.category,1);                    
                    })
     }, 
-  getTable(week,category){
-        this.$http.get('https://www.stips.minpolj.gov.rs/stips/ajax/nacionalni?kategorija='+category+'&godina='+this.year+'&nedelja='+week[0][0]+'&format=html&izvor='+1+'')
+  getTable(week,year,category,type){
+        this.$axios.getTableStips(category,year,week[0],type)
                    .then(res =>{
-                       if(res.data.html != ''){
-                              this.tableObj = convertTableToObject.convert(res.data.html);  
-                              this.tableObj = this.tableObj.filter(x=>{
+                       if(res != ''){
+                              this.tableObj = res.filter(x=>{
                                 if(x.Proizvod.replace(" ", "").includes(this.product)) return true;
                                }) 
-                       }
-          
-                      
+                       }                   
                    })
   }
 }

@@ -129,8 +129,10 @@ data(){
 mounted(){
 this.getCategories();
 this.getSubcategories();
+this.test();
 },
 created(){
+this.test();
 
 },
 methods:{
@@ -196,6 +198,10 @@ methods:{
                  }).catch(error =>{
                      console.log(error);
                  })
+    },
+    test(){
+        
+        console.log(this.categories[0] + 'sadasd')
     }
 
 }

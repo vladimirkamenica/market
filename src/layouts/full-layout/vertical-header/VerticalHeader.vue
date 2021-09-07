@@ -1,10 +1,11 @@
 <template>
-  <header class="topbar">
+  <header class="topbar ">
     <b-navbar
+    style="background: #5bab42"
       toggleable="lg"
       :type="`${navbarColor == 'white' ? 'light' : 'dark'}`"
       class="p-2"
-      :variant="navbarColor"
+      
     >
       <div :class="`navbar-header d-block d-lg-none pl-3`">
         <LogoDark v-if="navbarColor == 'white'" />
@@ -24,7 +25,7 @@
         <b-navbar-nav class="ml-auto" v-if="getAuth">
           <b-nav-item-dropdown right no-caret>
             <template #button-content>
-              <i class="mdi mdi-bell fs-7"></i>
+              <i class="mdi mdi-bell fs-7 d-none"></i>
             </template>
             <b-dropdown-item href="#">Action</b-dropdown-item>
             <b-dropdown-item href="#">Another Action</b-dropdown-item>
@@ -35,7 +36,7 @@
           <b-nav-item-dropdown right no-caret>
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <i class="fs-7 mdi mdi-comment-processing"></i>
+              <i class="fs-7 mdi mdi-comment-processing d-none"></i>
             </template>
             <b-dropdown-item href="#">Action</b-dropdown-item>
             <b-dropdown-item href="#">Another Action</b-dropdown-item>
@@ -61,26 +62,25 @@
             </b-dropdown-item>
             <b-dropdown-item href="#" class="d-flex align-items-center">
               Settings
-            </b-dropdown-item>
-            <b-dropdown-item href="#" class="d-flex align-items-center" @click="logOut">
-              Logout
-            </b-dropdown-item>
+            </b-dropdown-item>    
             <b-dropdown-item>
                 <b-link class="nav-item text-dark" :to="{name: 'CategorySubcategory'}">Category and Subcategory</b-link>
             </b-dropdown-item>
-          
+              <b-dropdown-item href="#" class="d-flex align-items-center" @click="logOut">
+              Logout
+            </b-dropdown-item>
           </b-nav-item-dropdown>
         
         </b-navbar-nav>
     
        
          
-    
-     
+        
+          <b-link right v-if="!getAuth" :to="{name: 'Login'}" class="d-none text-white text-right mr-5 justify-content-end">Login</b-link>
+        
+        
       </b-collapse>
-               <b-link right :to="{name: 'Stips'}" class="text-white mr-5">Stips</b-link>
-
-          <b-link right v-if="!getAuth" :to="{name: 'Login'}" class="text-white mr-5">Login</b-link>
+            
 
         
     </b-navbar>

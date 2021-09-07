@@ -1,6 +1,6 @@
 <template>
   <div id="single-category">
-      <b-container>
+      <b-container class="mt-4">
           <b-row>
                   <b-col>
                   <b-card
@@ -10,18 +10,27 @@
                    <template class="bg-dark" #header >
                        <b-row class="align-items-center">
                           <b-col>
-                            <h5 class="mb-0 text-dark">Cene voća na pijacama</h5>
+                            <h5 class="mb-0 text-dark">{{title}}</h5>
 
                            </b-col>
                          
                        </b-row>
                   </template>   
-                  <b-card-body>
-                  <div id="my-category"  v-for="(product,i) in items[0].products" :key="i">
-                    
-                      <b-link class="text-secondary" :to="{name: 'Weeks',params:{product : product.value}}"> 
+                  <b-card-body >
+                  <div id="my-category" class="align-items-center"   v-for="(product,i) in items.products" :key="i">
+                      <div class="mt-3 d-flex align-items-center">
+                           <b-avatar
+                      :variant="product.color"
+                      class="mr-3 m-0 p-0"
+                      >
+                          <component :is="product.img"></component>
+                      </b-avatar>
+                      <b-link class="text-secondary" :to="{name: 'Weeks',params:{product : product.value,category : product.stips_category,description: product.description,source: product.stips_source}}"> 
                           <h5>{{product.description}}</h5>
-                          </b-link>  
+                      </b-link>  
+
+                      </div>
+                     
                     <hr>
                     </div>                 
                   </b-card-body>
@@ -30,69 +39,54 @@
                   
              </b-col>
           </b-row>
+          <b-row>
+              <b-col>
+              
+              </b-col>
+          </b-row>
       </b-container>
   </div>
 </template>
 
 <script>
+import GlobalComponent from '../class/globalComponents.js';
+import Items from '../class/items.js';
 import range from '../class/range.js';
+
+
+
+
+
+
 
 
 export default {
     name: "SingleCategory",
+    components:{
+   ...GlobalComponent
+    },
     data(){
         return{
             years: range(2010,new Date().getFullYear()),
             category: '',
+            subcategory: '',
             select_year : 2021,
+            title : '',
             weeks: [],
-            items : [
-                {
-                    category : 1,
-                    products : [
-                        {
-                            value : 'Kruška',
-                            description: 'Cene krušaka na pijacama'
-                        },
-                        {
-                            value : 'Banana',
-                            description: 'Cene banane na pijacama'
-                        },
-                        {
-                            value : 'Borovnica',
-                            description: 'Cene borovnice na pijacama'
-                        },
-                        {
-                            value : 'Breskva',
-                            description: 'Cene breskve na pijacama'
-                        },
-                        {
-                            value : 'Grejpfrut ',
-                            description: 'Cene grejpfruta  na pijacama'
-                        },
-                        {
-                            value : 'Grožđe ',
-                            description: 'Cene grožđa  na pijacama'
-                        },
-                        {
-                            value : 'Jabuka ',
-                            description: 'Cene jabuka  na pijacama'
-                        },
-                        {
-                            value : 'Kivi ',
-                            description: 'Cene kivija na pijacama'
-                        }
-                    ]
-                }
-            ]
+            items : Items.items, 
         }
     },
     created(){
         this.category = this.$route.params.category;
-       
+        this.subcategory = this.$route.params.subcategory;
+        this.title = this.$route.params.title;
+        this.items = this.items.find(x=> x.stips_subcategory == this.subcategory);
         this.getWeek();
     },
     methods:{
+        checkItemsLength(){
+            return this.items.length > 0 ? true : false;
+        },
         getWeek(){
             this.$http.get(`https://www.stips.minpolj.gov.rs/stips/ajax/nedelje_za_godinu/${this.select_year}`)
                    .then(res =>{

@@ -9,10 +9,10 @@ import my_axios from '@/class/axiosMethod.js';
 import axios from "axios";
 import App from "./App.vue";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faPen,faTimes,faTint,faWind,faAppleAlt,faEgg} from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faPen,faTimes,faTint,faWind,faAppleAlt,faEgg,faPause,faPlay,faChevronRight,faChevronLeft,faPaw,faHome,faStore} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUserSecret,faPen,faTimes,faTint,faWind,faAppleAlt,faEgg)
+library.add(faUserSecret,faPen,faTimes,faTint,faWind,faAppleAlt,faEgg,faPause,faPlay,faChevronRight,faChevronLeft,faPaw,faHome,faStore)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.prototype.$axios = my_axios;
