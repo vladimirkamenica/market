@@ -4,6 +4,7 @@ export default{
         {
             id: 1,
             description : 'Imena za krave',
+            block: 'Imena krava',
             title: `
             Po narodnim verovanjima, ali i istraživanjima, ukoliko krava ima ime i pristupi joj se lično, pozove po imenu, davaće više mleka, a telenje će biti samostalno i brzo, a telad će biti zdrava i kvalitetna.</br></br>
             Imena krava daju se od milja, po ličnim ženskim imenima, po poznatim javnim ličnostima (glumci, pevači, sportisti, političari), ali i drugi načini imenovanja (likovi iz serija i filmova, likovi iz knjiga).</br></br>
@@ -37,9 +38,10 @@ export default{
         {
             id: 2,
             title :`Imena ovaca nekada su se davala na osnovu izgleda ovce ili od milja, a danas dobijaju i neka savremena imena na osnovu poznatih ličnosti.</br></br>
-
+            
             Predstavljamo nekoliko imena za ovce koja su najčešća u našem jeziku i podneblju:`,
-            description : 'Imena za ovace',       
+            description : 'Imena za ovce',      
+            block: 'Imena ovaca',
             img : FindIcon.find('Ovca').img,
             color : FindIcon.find('Ovca').color,
             names : [
@@ -64,7 +66,8 @@ export default{
             id: 3,
             title: `Još u prošlim vekovima kada su se volovi i bikovi koristili za rad i borbe u koridama, svaki od njih je imao svoje lično ime. Danas se jako retko volovi koriste za rad, a sve je manji broj bikova za borbe u koridama. I dalje je ipak ostala tradicija da bik ima ime.</br></br>
             Predstavljamo nekoliko desetina imena za bikove i volove koja su najčešća u našem jeziku i podneblju:`,
-            description : 'Imena za bikova i volova',
+            block: 'Imena bikova i volova',
+            description : 'Imena za bikove i volove',
             img : FindIcon.find('Bikovi').img,
             color : FindIcon.find('Bikovi').color,
             names: [
@@ -90,6 +93,7 @@ export default{
             title: `Imena konja se daju na osnovu ličnih imena, na osnovu izgleda, na osnovu podneblja, od milja, internacionalna imena, savremena imena po imenima poznatih javnih ličnosti i drugi načini.</br></br>
             Predstavljamo nekoliko desetina imena za konje koja su najčešća u našem jeziku i podneblju:`,
             description : 'Imena za konje',
+            block: 'Imena konja',
             img : FindIcon.find('Konj').img,
             color : FindIcon.find('Konj').color,
             names : [
@@ -120,6 +124,7 @@ export default{
             title: `Imena kobila se daju na osnovu ličnih imena, na osnovu izgleda, na osnovu podneblja, od milja, internacionalna imena, savremena imena po imenima poznatih javnih ličnosti i drugi načini.</br></br>
             Predstavljamo nekoliko desetina imena za kobile koja su najčešća u našem jeziku i podneblju:`,
             description : 'Imena za kobile',
+            block: 'Imena kobila',
             img : FindIcon.find('Kobila').img,
             color : FindIcon.find('Kobila').color,
             names : [
@@ -151,6 +156,7 @@ export default{
             description : 'Imena za koze',
             title: `Imena koza nekada su se davala na osnovu izgleda koze ili od milja, a danas dobijaju i neka savremena imena na osnovu poznatih ličnosti.</br></br>
             Predstavljamo nekoliko imena za koze koja su najčešća u našem jeziku i podneblju:`,
+            block: 'Imena koza',
             img : FindIcon.find('Koze').img,
             color : FindIcon.find('Koze').color,
             names : [
@@ -178,6 +184,7 @@ export default{
             id: 7,
             title: `Predstavljamo nekoliko  imena za ovnove koja su najčešća u našem jeziku i podneblju:</br></br>`,
             description : 'Imena za ovnove',
+            block: 'Imena ovnova',
             img : FindIcon.find('Ovnovi za priplod').img,
             color : FindIcon.find('Ovnovi za priplod').color,
             names : [
@@ -200,6 +207,7 @@ export default{
             id: 8,
             title: `Imena jagnjadi se daju na osnovu toga da li je jagnje muško ili žensko, tj. da li postaje ovca ili ovan. Često se dešava da uz ime jagnjeta ide ca (Belkica, Rogonjica) ili ić (Kumić).</br></br>`,
             description : 'Imena za jagnjad',
+            block: 'Imena jagnjadi',
             img : FindIcon.find('Jagnjad').img,
             color : FindIcon.find('Jagnjad').color,
             names : [
@@ -210,6 +218,7 @@ export default{
             id: 9,
             title: `Imena ždrebadi se daju na osnovu toga da li je ždrebe muško ili žensko, tj. da li postaje konj ili kobila. Često se dešava da uz ime ždrebeta ide ca (Bebica) ili ić (Arapić).</br></br>`,
             description : 'Imena za ždrebad',
+            block: 'Imena ždrebadi',
             img : FindIcon.find('Ždrebe').img,
             color : FindIcon.find('Ždrebe').color,
             names : [
@@ -219,7 +228,8 @@ export default{
         {
             id: 10,
             title: `Predstavljamo nekoliko  imena za jarce koja su najčešća u našem jeziku i podneblju:</br></br>`,
-            description : 'Imena za jarce',
+            description : 'Imena za jarca',
+            block: 'Imena jarca',
             img : FindIcon.find('Jarad').img,
             color : FindIcon.find('Jarad').color,
             names : [
@@ -243,6 +253,7 @@ export default{
             id: 11,
             title: `Imena jaradi se daju na osnovu toga da li je jare muško ili žensko, tj. da li postaje jarac ili koza. Često se dešava da uz ime jareta ide ca (Belkica, Rogonjica) ili ić (Kumić).</br></br>`,
             description : 'Imena za jarad',
+            block : 'Imena jaradi',
             img : FindIcon.find('Jarad').img,
             color : FindIcon.find('Jarad').color,
             names : [
@@ -253,6 +264,7 @@ export default{
             id: 12,
             title: `Predstavljamo nekoliko imena za neraste koja su najčešća u našem jeziku i podneblju:</br></br>`,
             description : 'Imena za neraste',
+            block : 'Imena nerasta',
             img : FindIcon.find('Prasad').img,
             color : FindIcon.find('Prasad').color,
             names : [
@@ -274,6 +286,7 @@ export default{
             id: 13,
             title: `Predstavljamo nekoliko imena za ćurane koja su najčešća u našem jeziku i podneblju:</br></br>`,
             description : 'Imena za ćurane',
+            block : 'Imena ćurana',
             img : FindIcon.find('Ćurka').img,
             color : FindIcon.find('Ćurka').color,
             names : [
@@ -296,6 +309,7 @@ export default{
             id: 14,
             title: `Predstavljamo nekoliko imena za petlove koja su najčešća u našem jeziku i podneblju:</br></br>`,
             description : 'Imena za petlove',
+            block : 'Imena petlova',
             img : FindIcon.find('Petao').img,
             color : FindIcon.find('Petao').color,
             names : [

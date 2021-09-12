@@ -82,6 +82,9 @@ import Horse from '../components/stips/type/Horse.vue';
 import Horse1 from '../components/stips/type/Horse1.vue';
 import Horse2 from '../components/stips/type/Horse2.vue';
 import Turkey from '../components/stips/type/Turkey.vue';
+import Calendar from '../components/stips/type/Calendar.vue';
+import Apricot from '../components/stips/type/Apricot.vue';
+import Strawberry from '../components/stips/type/Strawberry.vue';
 
 export default {
     'apple': Apple,
@@ -168,4 +171,7 @@ export default {
     'horse1' : Horse1,
     'horse2' : Horse2,
     'turkey' : Turkey,
+    'calendar' : Calendar,
+    'apricot' : Apricot,
+    'strawberry' : Strawberry,
 }

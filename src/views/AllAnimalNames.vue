@@ -21,15 +21,26 @@
                         size="40px"
                       >  <component :is='animal.img'></component>
                       </b-avatar>
-                      <b-link class="text-secondary" :to="{name: 'SingleAnimalNames',params:{id: animal.id}}"> <h5>{{animal.description}}</h5></b-link>                
+                     
+                       <router-link class="text-secondary" :to="{name: 'SingleAnimalNames', params:{description: format(animal.description), name: 'name', id: animal.id}}"><h5>{{animal.description}}</h5></router-link>
+                         
+                  
+                                  
+          
+                     
                     </div>                  
                          <hr class="mt-1 p-0">
                      
                     </div>  
-               
+                  
                   </b-card-body>                     
-        </b-card>
+                 </b-card>
               </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+            
+            </b-col>
           </b-row>
       </b-container>
  
@@ -49,7 +60,21 @@ data(){
     }
 },
 components:{
-...GlobalComponent
+...GlobalComponent,
+
+},
+methods:{
+  format(des){
+      let text  = des.toLowerCase().split(' ').join('-')
+      this.$session.set('id',11);
+      return text;
+  },
+  async set(animal){
+     let data = await this.$http.post("http://localhost:8000/api/session-set",{id: animal.id});
+     console.log(data);
+  
+     this.$router.push({name: 'SingleAnimalNames', params:{description: this.format(animal.description), id: animal.id}})     
+  }
 }
 }
 </script>

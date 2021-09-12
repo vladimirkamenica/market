@@ -238,9 +238,8 @@ export default{
                     avatar: 'op',
                     img : FindIcon.find('Ovnovi za priplod').img,
                     color : FindIcon.find('Ovnovi za priplod').color,
-            stips_category : 3,
-            stips_source : 4,
-
+                    stips_category : 3,
+                    stips_source : 4,
 
                 },
                 {
@@ -249,10 +248,8 @@ export default{
                     avatar: 'pi',
                     img : FindIcon.find('Priplodne junice').img,
                     color : FindIcon.find('Priplodne junice').color,
-            stips_category : 3,
-            stips_source : 4,
-
-
+                    stips_category : 3,
+                    stips_source : 4,
                 },
                 {
                     description : descriptionMarket('priplodnih nazimica'),
@@ -260,10 +257,8 @@ export default{
                     avatar: 'pi',
                     img : FindIcon.find('Priplodne nazimice').img,
                     color : FindIcon.find('Priplodne nazimice').color,
-            stips_category : 3,
-            stips_source : 4,
-
-
+                    stips_category : 3,
+                    stips_source : 4,
                 }
             ],
         },
@@ -394,7 +389,7 @@ export default{
                
                 {
                     value : 'Breskva',
-                    description: descriptionMarket('breskve'),
+                    description: descriptionMarket('breskvi'),
                     img : FindIcon.find('Breskva').img,
                     color: FindIcon.find('Breskva').color,
                     stips_category : 1,
@@ -430,7 +425,7 @@ export default{
 
                 },
                 {
-                    description : descriptionMarket('kruške'),
+                    description : descriptionMarket('kruška'),
                     value: "Kruška",
                     avatar: 'kr',
                     color : FindIcon.find('Kruška').color,
@@ -441,7 +436,7 @@ export default{
                 },
                
                 {
-                    description : descriptionMarket('jabuke'),
+                    description : descriptionMarket('jabuka'),
                     value: "Jabuka",
                     avatar: 'ja',
                     color : FindIcon.find('Jabuka').color,
@@ -452,7 +447,7 @@ export default{
                 },
                 
                 {
-                    description : descriptionMarket('kupine'),
+                    description : descriptionMarket('kupina'),
                     value: "Kupina",
                     avatar: 'an',
                     color : FindIcon.find('Kupina').color,
@@ -463,7 +458,7 @@ export default{
 
                 },
                 {
-                    description : descriptionMarket('maline'),
+                    description : descriptionMarket('malina'),
                     value: "Malina",
                     avatar: 'an',
                     color : FindIcon.find('Malina').color,
@@ -506,7 +501,28 @@ export default{
 
 
                 },
+                {
+                    description : descriptionMarket('kajsija'),
+                    value: "Kajsija",
+                    avatar: 'ks',
+                    color : FindIcon.find('Kajsija').color,
+                    img : FindIcon.find('Kajsija').img,
+                    stips_category : 1,
+                     stips_source : 1,
 
+
+                },
+                {
+                    description : descriptionMarket('jagoda'),
+                    value: "Jagoda",
+                    avatar: 'ks',
+                    color : FindIcon.find('Jagoda').color,
+                    img : FindIcon.find('Jagoda').img,
+                    stips_category : 1,
+                     stips_source : 1,
+
+
+                },
             ]
         },
         {
@@ -693,7 +709,7 @@ export default{
                     stips_source : 1,
                 },
                 {
-                    description : descriptionMarket('krastavca'),
+                    description : descriptionMarket('krastavaca'),
                     value: "Krastavac",
                     avatar: 'kr',
                     color : FindIcon.find('Krastavac').color,

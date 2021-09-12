@@ -4,10 +4,10 @@
                   :cardWidth="cardWidth"
                   :cardHeight="cardHeight"
                   :finishPercent="finishPercent"
-                  imageUrl="https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.6435-9/33703552_10155897826812886_1150429057775566848_n.png?_nc_cat=111&ccb=1-5&_nc_sid=730e14&_nc_ohc=Fp4Ncj0xS1wAX8t6cH8&_nc_ht=scontent.fbeg4-1.fna&oh=649973902e806280b4a93df559f9285c&oe=615C76A6"
+                  :imageUrl="require('@/assets/images/greb1.png')"
                   :brushUrl="brushUrl"
                   :forceReveal="forceReveal">
-      <img class="card-content img-fluid" height="300" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg">
+      <a href="https://www.itkursevi.com/" target="_blank"><img class="card-content img-fluid"  width="300" src="@/assets/images/baner11.jpg"></a>
     </scratch-card>
     <button class="d-none" @click="forceReveal = true">Force Reveal!</button>
       
@@ -29,7 +29,7 @@ export default {
     return {
       renderCount: 0,
       cardWidth: 500,
-      cardHeight: 360,
+      cardHeight: 298,
       finishPercent: 20,
       brushUrl: BRUSH,
       forceReveal: false,
@@ -41,5 +41,9 @@ export default {
 <style scoped>
 .card-content {
   color: red;
+}
+.img-st {
+  max-width: 100%;
+  height: auto;
 }
 </style> 

@@ -1,18 +1,18 @@
 <template>
-  <div id="animal-names">
-      <b-card               
+  <div id="animal">
+           <b-card               
                    header-tag="header"
                    header-bg-variant="light"
                       
                   >   
                    <template class="bg-black" #header >
-                      <h5 class="mb-0 text-dark">Imena životinja</h5>  
-                     <b-link :to="{name: 'AllAnimalNames',params:{description: 'imena-životinja'}}"><h6 class='text-info'>pogledaj sve</h6></b-link> 
+                      <h5 class="mb-0 text-dark">Kalendar okota životinja</h5>  
+                     <b-link :to="{name: 'AllAnimal',params:{description: 'kalendar-okota-zivotinja'}}"><h6 class='text-info'>pogledaj sve</h6></b-link> 
 
                   </template>   
                   <b-card-body class="bg-block" >
                     <div v-for="(animal,i) in animals" :key="i">
-                      <div v-if="i < 5">
+                      <div v-if="i < 6">
                    <div class="d-flex align-items-center" >
                       <b-avatar
                         class="mr-2 text-white"
@@ -20,7 +20,7 @@
                         size="40px"
                       >  <component :is='animal.img'></component>
                       </b-avatar>
-                      <b-link class="text-secondary" :to="{name: 'SingleAnimalNames',params:{description: format(animal.description) ,id: animal.id}}"> <h5>{{animal.block}}</h5></b-link>                
+                      <router-link class="text-secondary" :to="{name: 'AnimalsTime',params:{title: animal.title.replace(/[()]/g,' ').toLowerCase().split(' ').join('-').split('--').join('-') }}"> <h5>{{animal.title}}</h5></router-link>                
                     </div>                  
                          <hr class="mt-1 p-0">
                      
@@ -32,19 +32,15 @@
 </template>
 
 <script>
+import animlasItem from '../class/animals.js';
 import GlobalComponent from '../class/globalComponents.js';
-import animals from '../class/animalsName.js';
 
 export default {
-name: "AnimalNames",
+name: "Animals",
 data(){
     return{
-        animals: animals.animals
-
+        animals : animlasItem.animals
     }
-},
-created(){
-  
 },
 components:{
 ...GlobalComponent

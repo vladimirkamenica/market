@@ -11,6 +11,8 @@
             <table-fruit :table_fields="table_fields" :stacked="stacked" :items_table="tableObj"></table-fruit>
           </b-col>
       </b-row>
+      <stips-site></stips-site>
+
   </b-container>
   </div>
 </template>
@@ -57,7 +59,7 @@ methods:{
               this.table_fields = await categoryFields(this.category);
               let data = await this.$axios.getTableStips(this.category,this.year,this.week,source);
               this.tableObj = data.filter(x=>{
-                                if(x.Proizvod.replace(" ", "").includes(product)) return true;
+                                if(x.Proizvod.includes(product)) return true;
                                }) 
                  
   },

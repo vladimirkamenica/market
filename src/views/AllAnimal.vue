@@ -1,18 +1,21 @@
 <template>
-  <div id="animal-names">
-      <b-card               
+  <div id="all-animal">
+    <b-container>
+      <b-row class="justify-content-center"> 
+        <b-col cols="8">
+           <b-card               
                    header-tag="header"
                    header-bg-variant="light"
                       
                   >   
                    <template class="bg-black" #header >
-                      <h5 class="mb-0 text-dark">Imena životinja</h5>  
-                     <b-link :to="{name: 'AllAnimalNames',params:{description: 'imena-životinja'}}"><h6 class='text-info'>pogledaj sve</h6></b-link> 
+                      <h5 class="mb-0 text-dark">Kalendar okota životinja</h5>  
+                   
 
                   </template>   
                   <b-card-body class="bg-block" >
                     <div v-for="(animal,i) in animals" :key="i">
-                      <div v-if="i < 5">
+                      
                    <div class="d-flex align-items-center" >
                       <b-avatar
                         class="mr-2 text-white"
@@ -20,41 +23,35 @@
                         size="40px"
                       >  <component :is='animal.img'></component>
                       </b-avatar>
-                      <b-link class="text-secondary" :to="{name: 'SingleAnimalNames',params:{description: format(animal.description) ,id: animal.id}}"> <h5>{{animal.block}}</h5></b-link>                
+                      <router-link class="text-secondary" :to="{name: 'AnimalsTime',params:{titleAnimal: animal.title.replace(/[()]/g,' ').toLowerCase().split(' ').join('-').split('--').join('-'),animal: animal.animal.toLowerCase() }}"> <h5>{{animal.title}}</h5></router-link>                
                     </div>                  
                          <hr class="mt-1 p-0">
                      
                     </div>  
-                    </div>    
+                   
                   </b-card-body>                     
         </b-card>
+
+        </b-col>
+      </b-row>
+    </b-container>
+              
   </div>
 </template>
 
 <script>
+import animlasItem from '../class/animals.js';
 import GlobalComponent from '../class/globalComponents.js';
-import animals from '../class/animalsName.js';
-
 export default {
-name: "AnimalNames",
+name: 'AllAnimal',
 data(){
     return{
-        animals: animals.animals
-
+  animals : animlasItem.animals
     }
-},
-created(){
-  
 },
 components:{
 ...GlobalComponent
 },
-methods:{
-  format(des){
-      let text  = des.toLowerCase().split(' ').join('-')
-      return text;
-  }
-}
 }
 </script>
 

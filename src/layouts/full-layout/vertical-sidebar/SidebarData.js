@@ -5,22 +5,28 @@ export default [
     title: "Početna",
     name: "Home",
   },
+  // {
+  //   id: "2",
+  //   icon: "paw",
+  //   title: "Stips",
+  //   name: "Stips",
+  // },
   {
     id: "2",
     icon: "paw",
-    title: "Stips",
-    name: "Stips",
-  },
-  {
-    id: "3",
-    icon: "store",
-    title: "Cene na pijaci",
-    name: "AllBlock",
-  },
-  {
-    id: "3",
-    icon: "paw",
     title: "Imena životinja",
+    name: "AllAnimalNames",
+  },
+  {
+    id: "3",
+    icon: "calendar",
+    title: "Kalendar okota životinja",
+    name: "AnimalBirth",
+  },
+  {
+    id: "4",
+    icon: "store",
+    title: "Cene stoke na pijacama",
     name: "AllBlock",
   },
   // {

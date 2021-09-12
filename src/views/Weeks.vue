@@ -51,11 +51,8 @@
                     </div>        
                           </b-col>
                       </b-row>
-                      <b-row>
-                          <b-col>
-                           <h5>Izvor: Stips</h5>
-                          </b-col>
-                      </b-row>
+                     <stips-site></stips-site>
+
                        
                   </b-card-body>
                       
@@ -152,7 +149,7 @@ export default {
               this.table_fields = await categoryFields(this.category);        
               let data = await this.$axios.getTableStips(this.category,2021,this.find_week[0],source);
                this.tableObj =  data.filter(x=>{
-                                if(x.Proizvod.replace(" ", "").includes(product)) return true;
+                                if(x.Proizvod.includes(product)) return true;
                               
                                }) 
 

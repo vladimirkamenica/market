@@ -525,5 +525,22 @@ export default{
               color : 'success'
     
             },
+            {
+              name : 'Kalendar',
+              img : 'calendar',
+              color : 'success'
+    
+            },
+            {
+              name : 'Kajsija',
+              img : 'apricot',
+              color : 'success'
+    
+            },{
+              name : 'Jagoda',
+              img : 'strawberry',
+              color : 'danger'
+    
+            },
     ]     
 }

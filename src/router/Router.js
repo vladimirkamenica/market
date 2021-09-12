@@ -153,15 +153,51 @@ const router = new Router({
           component: () => import("@/views/CurrentTable"),
         },
         {
-          name: "SingleAnimalNames",
-          path: "/imena-životinja/:id",
-          component: () => import("@/views/SingleAnimalNames"),
+          name: "AllAnimalNames",
+          path: "/imena-zivotinja",
+          component: () => import("@/views/AllAnimalNames"),
+         
+          
         },
         {
-          name: "AllAnimalNames",
-          path: "/animal-names/",
-          component: () => import("@/views/AllAnimalNames"),
+          name: "SingleAnimalNames",
+          path: "/:description/:name",   
+          component: () => import("@/views/SingleAnimalNames"),
+          beforeEnter(to, from, next) {
+                   if(typeof to.params.id === 'undefined'){
+                     if(localStorage.getItem('animal_id'))
+                     {
+                         to.params.id = localStorage.getItem('animal_id');
+                         next()
+                     }
+                     else{
+                      next({name: 'AllAnimalNames'});
+                     }      
+                
+                }else{
+                     localStorage.setItem('animal_id',to.params.id);
+                     next();
+                }
+                  
+            
+            
+          }
         },
+        {
+          name: "AnimalsTime",
+          path: "/:titleAnimal/:animal",
+      
+          component: () => import("@/views/AnimalsTime"), 
+          
+ 
+        },
+        {
+          name: "AnimalBirth",
+          path: "/kalendar-okota-zivotinja",    
+          component: () => import("@/views/AllAnimal"), 
+        },
+       
+       
       ],
     },
     {

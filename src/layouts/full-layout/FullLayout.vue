@@ -7,7 +7,11 @@
     <aside class="page-wrapper">
       <VerticalHeader />
       <div class="min-height container-fluid p-4">
-        <router-view />
+
+<router-view></router-view>
+
+    
+ 
       </div>
       <Footer />
     </aside>

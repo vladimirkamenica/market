@@ -35,6 +35,9 @@
        <b-col cols="12" lg="4" md="6" class="mt-4">
           <animal-names></animal-names>
        </b-col>
+        <b-col cols="12" lg="4" md="6" class="mt-4">
+          <animals></animals>
+       </b-col>
     </b-row>
    <b-row class="mt-4">
    
@@ -65,6 +68,7 @@ import LineFruit from "./LineFruit.vue";
 import PieChart from "./PieData.vue";
 import PieCattle from "./PieCattle.vue";
 import AnimalNames from './AnimalNames.vue';
+import Animals from './Animals.vue';
 
 
 //import TopCards from "./dashboard-components/TopCards";
@@ -88,7 +92,8 @@ export default {
     LineFruit,
     PieChart,
     PieCattle,
-    AnimalNames
+    AnimalNames,
+    Animals
 
    
   

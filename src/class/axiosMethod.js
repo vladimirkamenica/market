@@ -116,4 +116,15 @@ static getWeeksStips(year){
              })
 })
 }
+static getSessionId(url){
+    return new Promise((res,rej)=>{
+        axios.get(this.default_url(url))
+             .then(result=>{
+                 res(result.data.id)
+             })
+             .catch(err=>{
+                 rej(err)
+             })
+})
+}
 }

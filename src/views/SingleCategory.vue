@@ -34,7 +34,7 @@
                     <hr>
                     </div>                 
                   </b-card-body>
-                      
+                      <stips-site></stips-site>
                   </b-card>
                   
              </b-col>
